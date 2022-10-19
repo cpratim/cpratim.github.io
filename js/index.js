@@ -67,7 +67,7 @@ function processProjects(data) {
             let project = map[language][i];
             let element = document.createElement("div");
             element.classList.add('project')
-            element.innerHTML = `<a href="${project.url}">${project.name}</a>`
+            element.innerHTML = `<a href="${project.html_url}">${project.name}</a>`
             list.appendChild(element);
         }
         languageHeader.appendChild(list);
