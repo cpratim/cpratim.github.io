@@ -21,6 +21,7 @@ let minuteFactTitle = document.getElementById("minute-fact-title");
 let minuteFact = document.getElementById("minute-fact");
 let secondFactTitle = document.getElementById("second-fact-title");
 let secondFact = document.getElementById("second-fact");
+let projectsList = document.getElementById("projects-list");
 
 function processMinuteFact(data) {
     minuteFactTitle.innerHTML = `Minute: ${minutes}`
@@ -42,11 +43,38 @@ function processSecondFact(data) {
     secondFact.innerHTML = data.text;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function processProjects(data) {
+    let map = {};
+    for (let i in data) {
+        let project = data[i];
 
-    if (window.location.href.substring(0, 5) != 'https') {
-        window.location.href = 'https://cpratim.studio';
+        let language = project.language
+        if (!(language in map)) {
+            map[language] = [];
+        }
+        map[language].push(project);
+        // let element = document.createElement("li");
+        // element.innerHTML = `<a href="${project.url}">${project.name}</a>`
+        // projectsList.appendChild(element);
     }
+    for (let language in map) {
+        let languageHeader = document.createElement("div");
+        languageHeader.innerHTML = language;
+        languageHeader.classList.add('language-header')
+        projectsList.appendChild(languageHeader);
+        let list = document.createElement("div");
+        for (let i in map[language]) {
+            let project = map[language][i];
+            let element = document.createElement("div");
+            element.classList.add('project')
+            element.innerHTML = `<a href="${project.url}">${project.name}</a>`
+            list.appendChild(element);
+        }
+        languageHeader.appendChild(list);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
 
     fetch(`https://numbersapi.p.rapidapi.com/${minutes}/math?json=true&fragment=true`, options)
         .then(response => response.json())
@@ -68,6 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => processDateFact(response))
         .catch(err => console.error(err));
 
+    fetch(`https://api.github.com/users/cpratim/repos`)
+        .then(response => response.json())
+        .then(response => processProjects(response))
+        .catch(err => console.error(err));
 
 });
 

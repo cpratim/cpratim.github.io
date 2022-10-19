@@ -66,11 +66,34 @@ body {
     line-height: 20px;
 }
 
-#header {
+#projects-wrapper {
+    margin-top: 50px;
+}
+
+#projects-header {
     font-size: 25px;
 }
 
+#header {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
 .item {
-    margin-top: 10px;
+    margin-top: 12px;
     opacity: .8;
+}
+
+.project {
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+#projects-list {
+    opacity: .8;
+}
+
+.language-header {
+    margin-top: 10px;
+    font-size: 18px;
 }
