@@ -29,19 +29,21 @@ body {
 #right {
     margin-left: 50vw;
     width: 50vw;
-    height: 100vh;
+    height: auto;
 }
 
 #clock-wrapper {
     width: 300px;
     float: right;
     margin: 100px;
+    margin-top: 50px;
 }
 
 #main-wrapper {
     width: 500px;
     float: left;
     margin: 100px;
+    margin-top: 50px;
 }
 
 
