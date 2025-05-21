@@ -13,6 +13,7 @@
 .pfp {
     width: 175px;
     height: auto;
+    margin-top: 6px;
 }
 
 .pfp-wrapper {
@@ -26,16 +27,15 @@
     display: flex;
     justify-content: center;
     height: auto;
-    margin-top: 225px;
+    margin-top: 175px;
 }
 
 .name {
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 500;
 }
 
 .name-wrapper {
-    margin-top: 0px;
     margin-left: 40px;
     width: 500px;
 }
@@ -55,14 +55,15 @@
     font-weight: 400;
 }
 
-.links a {
+a {
     text-decoration: none;
     /* color: inherit; */
     opacity: 0.85;
+    color: hsl(270, 100%, 36%);
 }
 
-.links a:hover {
-    text-decoration: underline;
+a:hover {
+    text-decoration: line-through;
 }
 
 .description {
@@ -77,5 +78,45 @@
     height: auto;
     width: 176px;
     margin-left: 0px;
-    margin-top: -10px;
+    margin-top: -2px;
+}
+
+.publications {
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.pub-title {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.pub-list {
+    margin-top: 7px;
+}
+
+.pub-item {
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.projects {
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.project-title {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.project-list {
+    margin-top: 7px;
+}
+
+.project-item {
+    font-size: 13px;
+    margin-top: 4px;
 }
